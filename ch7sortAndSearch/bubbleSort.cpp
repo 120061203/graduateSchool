@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SWAP2(x, y, t) ((t)=(a), (a)=(b), (b)=(t))
+#define SWAP2(x, y, t) ((t) = (a), (a) = (b), (b) = (t))
 void swap(int *, int *);
-void swap3(int &,int &);
+void swap3(int &, int &);
 void bubbleSort(int[], int);
 int main()
 {
@@ -13,13 +13,13 @@ int main()
     int originArr3[] = {9, 8, 7, 6, 5, 4, 3};
     int a = 10;
     int b = 20;
-    int t=0;
-    SWAP2(a, b,t);
+    int t = 0;
+    SWAP2(a, b, t);
     printf("after swap2 a=%d\n", a);
     printf("after swap2 b=%d\n", b);
     a = 10;
     b = 20;
-    swap3(&a,&b);
+    swap3(a, b);
     printf("after swap3 a=%d\n", a);
     printf("after swap3 b=%d\n", b);
 
@@ -43,8 +43,6 @@ int main()
     diff = finish_t - start_t; // ms
     printf("max to min worst sequence%f  ms\n", diff);
 
-
-
     system("pause");
     return 0;
 }
@@ -61,24 +59,24 @@ struct temp_value
     int b;
 };
 typedef struct temp_value temp_value;
-temp_value swap4(int a, int b){
-    int temp =a;
+temp_value swap4(int a, int b)
+{
+    int temp = a;
     a = b;
     b = temp;
-    
 
     temp_value result;
-    result.a =a;
-    result.b =b;
+    result.a = a;
+    result.b = b;
     return result;
     // (*temp_value).a
     // temp_value->a
 }
-void swap3(int &a,int &b){
-    int temp =a;
-    a=temp;
-    temp =b;
-
+void swap3(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
 void bubbleSort(int arr[], int len)
@@ -86,7 +84,7 @@ void bubbleSort(int arr[], int len)
     int count = 1;
     for (int i = 1; i <= len - 1; i++)
     {
-        int flag = 0; //flag 表示是否swap
+        int flag = 0; // flag 表示是否swap
 
         for (int j = 0; j <= len - i - 1; j++)
         {
