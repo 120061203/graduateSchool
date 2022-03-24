@@ -4,6 +4,7 @@
 
 #define SWAP2(x, y, t) ((t)=(a), (a)=(b), (b)=(t))
 void swap(int *, int *);
+void swap3(int &,int &);
 void bubbleSort(int[], int);
 int main()
 {
@@ -14,8 +15,13 @@ int main()
     int b = 20;
     int t=0;
     SWAP2(a, b,t);
-    printf("after swap a=%d\n", a);
-    printf("after swap b=%d\n", b);
+    printf("after swap2 a=%d\n", a);
+    printf("after swap2 b=%d\n", b);
+    a = 10;
+    b = 20;
+    swap3(&a,&b);
+    printf("after swap3 a=%d\n", a);
+    printf("after swap3 b=%d\n", b);
 
     clock_t start_t, finish_t;
     long double total_t = 0;
