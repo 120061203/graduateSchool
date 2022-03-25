@@ -18,8 +18,8 @@ int main()
 }
 int calcArrLen(int arr[])
 {
-    int len = sizeof(arr) / sizeof(arr[0]);
-    return len;
+    // int len = sizeof(arr) / sizeof(arr[0]);
+    // return len;
 }
 void swap(int *a, int *b)
 {
