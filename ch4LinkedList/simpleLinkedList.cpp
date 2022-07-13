@@ -15,7 +15,7 @@ int main()
     head->Data = 1;
     head->Link = secondNode;
 
-    secondNode->Data = 2;
+    secondNode->Data = 4;
     secondNode->Link = NULL;
 
     printf("please choose operation in number:\n");
@@ -60,7 +60,7 @@ void traversal(struct NODE *linkedlist)
     while (p != NULL)
     {
         count++;
-        printf("%d:%d\n", count, p->Data);
+        printf("No.%d -> %d\n", count, p->Data);
         p = p->Link;
     }
 }
