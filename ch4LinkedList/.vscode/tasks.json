@@ -1,28 +1,19 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe 建置使用中檔案",
-            "command": "C:\\MinGW\\mingw64\\bin\\g++.exe",
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
+                "-g", "${file}", "-o", "${fileBasenameNoExtension}.exe"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "detail": "偵錯工具產生的工作。"
+            }
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
