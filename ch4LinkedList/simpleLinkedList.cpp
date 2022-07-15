@@ -10,6 +10,7 @@ int length(struct NODE *);
 void traversal(struct NODE *);
 void insert(struct NODE *, int, int);
 void deleteNode(struct NODE *, int);
+void invert(struct NODE *);
 NODE *head = new NODE();
 NODE *secondNode = new NODE();
 
@@ -27,6 +28,7 @@ int main()
         printf("2:Traversal Linked List \n");
         printf("3:Insert element to Linked List \n");
         printf("4:Delete element from Linked List \n");
+        printf("5:Invert Linked List \n");
 
         int op = 0;
         int index = 0;
@@ -56,13 +58,18 @@ int main()
             scanf("%d", &index);
             deleteNode(head, index);
         }
+        else if (op == 5)
+        {
+            invert(head);
+            printf("Invert complete\n\n");
+        }
         else if (op == 0)
         {
             break;
         }
         else
         {
-            printf("please choose again");
+            printf("please choose again\n\n");
         }
     }
 
@@ -174,4 +181,19 @@ void deleteNode(struct NODE *linkedlist, int index)
         }
     }
     return;
+}
+void invert(struct NODE *linkedlist)
+{
+    NODE *previous = NULL, *current = linkedlist, *after = linkedlist->Link;
+    while (after != NULL)
+    {
+        current->Link = previous; // current link to previous
+        previous = current;       // previous move to current
+        current = after;          // current move to after
+        after = after->Link;      // after move to next Link
+        // current->Link = previous;//current's Link to previous address
+    }
+    current->Link = previous;
+
+    head = current;
 }
